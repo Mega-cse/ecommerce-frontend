@@ -1,0 +1,99 @@
+/* Register Container */
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Adjust height for smaller screens */
+  min-height: 100vh; /* Ensure it takes at least the full viewport height */
+  background-color: #f0f0f0;
+  padding: 20px; /* Add padding to avoid edge-to-edge content */
+}
+
+/* Form Styles */
+.form {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px; /* Set max-width for the form */
+  width: 100%; /* Ensure form is responsive */
+}
+
+.form span {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-control {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.inp_text {
+  padding: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+button[type="submit"] {
+  width: 100%;
+  height: 40px;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+
+/* For Tablets and Up */
+@media (max-width: 768px) {
+  .form {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
+
+  .form span {
+    font-size: 20px; /* Reduce font size for smaller screens */
+  }
+
+  .form-control {
+    height: 35px; /* Adjust height for smaller screens */
+    padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  button[type="submit"] {
+    height: 35px; /* Adjust button height for smaller screens */
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+  .form {
+    padding: 10px; /* Further adjust padding for mobile devices */
+  }
+
+  .form span {
+    font-size: 18px; /* Further reduce font size for very small screens */
+  }
+
+  .form-control {
+    height: 30px; /* Further adjust height for mobile devices */
+    padding: 6px; /* Further adjust padding for mobile devices */
+  }
+
+  button[type="submit"] {
+    height: 30px; /* Further adjust button height for mobile devices */
+  }
+}

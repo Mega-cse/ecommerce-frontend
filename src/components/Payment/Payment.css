@@ -1,0 +1,173 @@
+/* Payment.css */
+
+/* Payment Container */
+.payment-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+  width: 90%; /* Adjust width to be a percentage */
+  padding: 8% 0 0;
+}
+
+/* Payment Methods */
+.payment-methods {
+  margin-bottom: 20px;
+  padding: 10px 20px;
+}
+
+.payment-methods label {
+  padding: 10px 20px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* Address Form */
+.address-form {
+  margin-top: 20px;
+}
+
+/* Place Order Button */
+.place-order-button {
+  display: block;
+  width: auto; /* Adjust width to fit content */
+  margin: 20px auto; /* Center button horizontally and add margin */
+  padding: 10px 20px;
+  background-color: #ffa07a;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center; /* Center text inside button */
+}
+
+.place-order-button:hover {
+  background-color: #ff8c69; /* Slightly darker color on hover */
+}
+
+/* Order Confirmation */
+.order-confirmation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  background: #f0f0f0;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-confirmation h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.order-confirmation p {
+  margin: 10px 0;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+.order-confirmation button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #ffa07a;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.order-confirmation button:hover {
+  background-color: #ff8c69; /* Slightly darker color on hover */
+}
+
+/* Burst Animation */
+.burst {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(214, 38, 28, 0.5) 0%, rgba(255, 69, 58, 0) 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+}
+
+.burst.animate {
+  animation: burstAnimation 1s ease-out forwards;
+}
+
+@keyframes burstAnimation {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(2) translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(3) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Responsive Styles */
+
+/* For Tablets and Up */
+@media (max-width: 768px) {
+  .payment-container {
+    width: 80%; /* Adjust width for tablets */
+  }
+
+  .place-order-button {
+    padding: 12px 24px;
+  }
+
+  .order-confirmation h2 {
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+  }
+
+  .order-confirmation p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+  }
+
+  .order-confirmation button {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 480px) {
+  .payment-container {
+    width: 95%; /* Adjust width for mobile devices */
+    padding: 5% 0; /* Adjust padding for mobile devices */
+  }
+
+  .place-order-button {
+    width: 100%; /* Make button full-width */
+    padding: 12px;
+  }
+
+  .order-confirmation h2 {
+    font-size: 1.2rem; /* Adjust font size for very small screens */
+  }
+
+  .order-confirmation p {
+    font-size: 0.9rem; /* Adjust font size for very small screens */
+  }
+
+  .order-confirmation button {
+    width: 100%; /* Make button full-width */
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+}
