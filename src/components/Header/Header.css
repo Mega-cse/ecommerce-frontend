@@ -12,7 +12,7 @@
   position: absolute;
   top: 40%;
   left: 10%;
-  background-color: #e4baba;
+  background-color: rgba(228, 186, 186, 0.9); /* Slight transparency for better readability */
   padding: 10px 20px;
   border-radius: 5px;
   border: 1px solid #ee7474;
@@ -20,6 +20,12 @@
   font-size: 3.5em;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+}
+
+.navs:hover {
+  background-color: #ee7474; /* Change on hover */
+  color: white; /* Change text color on hover */
 }
 
 /* Responsive styles */
@@ -38,5 +44,12 @@
     left: 2%;
     font-size: 1.5em;
     padding: 6px 12px;
+  }
+}
+
+@media (max-width: 320px) { /* Additional style for very small screens */
+  .navs {
+    font-size: 1.2em;
+    padding: 4px 8px;
   }
 }

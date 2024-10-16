@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-//import './Product.css'
+
 
 const ProductCard = ({ product }) => {
   const { user, cartItems, setCartItems } = useAuth();
