@@ -46,7 +46,7 @@ const Payment = () => {
     // Check if userId is available
     const userId = user?.id; // Ensure userId is correctly accessed
     if (!userId) {
-      alert('User ID is not available. Please log in and try again.');
+      alert('User  ID is not available. Please log in and try again.');
       return;
     }
   
@@ -72,7 +72,7 @@ const Payment = () => {
     <div className="payment-container">
       <h2>Select Payment Method</h2>
       <div className="payment-methods">
-        <label>
+        <label className="payment-option">
           <input
             type="radio"
             name="paymentMethod"
@@ -80,9 +80,10 @@ const Payment = () => {
             checked={paymentMethod === 'payOnline'}
             onChange={handlePaymentChange}
           />
-          Pay Online <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/UPI-Logo.png" style={{ width: "50%" }} />
+          Pay Online 
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/UPI-Logo.png" alt="UPI Logo" className="payment-image" />
         </label>
-        <label>
+        <label className="payment-option">
           <input
             type="radio"
             name="paymentMethod"
@@ -90,7 +91,8 @@ const Payment = () => {
             checked={paymentMethod === 'cashOnDelivery'}
             onChange={handlePaymentChange}
           />
-          Cash on Delivery <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/money-one-hundred-dollar-bill-qvnka28-600.jpg" style={{ width: "50%" }} />
+          Cash on Delivery 
+          <img src="https://atlas-content-cdn.pixelsquid.com/stock-images/money-one-hundred-dollar-bill-qvnka28-600.jpg" alt="Cash on Delivery" className="payment-image" />
         </label>
       </div>
 
@@ -101,7 +103,7 @@ const Payment = () => {
             value={address}
             onChange={handleAddressChange}
             rows="4"
-            style={{ width: '100%' }}
+            className="address-input"
           ></textarea>
         </div>
       )}

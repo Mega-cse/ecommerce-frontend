@@ -8,11 +8,11 @@
   border-radius: 5px;
 }
 
-.navs {
+.explore {
   position: absolute;
   top: 40%;
   left: 10%;
-  background-color: rgba(228, 186, 186, 0.9); /* Slight transparency for better readability */
+  background-color: rgba(228, 186, 186, 0.9);
   padding: 10px 20px;
   border-radius: 5px;
   border: 1px solid #ee7474;
@@ -20,12 +20,25 @@
   font-size: 3.5em;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   text-decoration: none;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transitions */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-.navs:hover {
-  background-color: #ee7474; /* Change on hover */
-  color: white; /* Change text color on hover */
+.explore:hover {
+  background-color: #ee7474;
+  color: white;
+}
+
+/* Arrow styles */
+.slick-prev, .slick-next {
+  font-size: 2em;
+  color: #ee7474;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.slick-prev:hover, .slick-next:hover {
+  color: #d54b4b; /* Darker shade on hover */
 }
 
 /* Responsive styles */
@@ -47,7 +60,7 @@
   }
 }
 
-@media (max-width: 320px) { /* Additional style for very small screens */
+@media (max-width: 320px) {
   .navs {
     font-size: 1.2em;
     padding: 4px 8px;

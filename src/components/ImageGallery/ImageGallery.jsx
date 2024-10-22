@@ -49,11 +49,7 @@ const ImageGallery = () => {
 
   return (
     <>
-      <div className="App py-5">
-        <div className="moving-text" style={{ color: 'orange', fontSize: '3em', fontFamily: 'sans-serif', textAlign: 'center' }}>
-          BLOCKBUSTER DEALS!!!
-        </div>
-      </div>
+    
       <div className="image-gallery">
         {images.map((image, index) => (
           <div key={index} className="image-box">

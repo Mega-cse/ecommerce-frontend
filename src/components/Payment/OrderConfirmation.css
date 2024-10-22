@@ -1,0 +1,110 @@
+/* OrderConfirmation.css */
+
+.order-confirmation {
+    max-width: 600px; /* Limit the width for better readability */
+    margin: 20px auto; /* Center the container */
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 12px; /* Rounded corners */
+    background: linear-gradient(135deg, #f9f9f9, #e0f7fa); /* Gradient background */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for depth */
+    text-align: center;
+    animation: fadeIn 0.9s; /* Fade-in animation */
+  }
+  
+  .burst {
+    position: relative;
+    width: 100px; /* Size of the burst */
+    height: 100px; /* Size of the burst */
+    background-color: transparent; /* Make the burst background transparent */
+    margin: 0 auto 20px; /* Center the burst */
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .burst::before,
+  .burst::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background-color: #ffcc00; /* Balloon color */
+    animation: burst-animation 1.0s forwards;
+  }
+  
+  .burst::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .burst::after {
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+    opacity: 0.5; /* Fade effect for the outer layer */
+    animation-delay: 0.2s; /* Delay for the outer layer */
+  }
+  
+  @keyframes burst-animation {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+    }
+  
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  h2 {
+    color: #00796b; /* Dark teal color for the heading */
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    color: #555; /* Darker gray for text */
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px 20px; /* Padding for the button */
+    font-size: 16px;
+    background-color: #00796b; /* Teal background */
+    color: #fff; /* White text */
+    border: none;
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+  }
+  
+  button:hover {
+    background-color: #004d40; /* Darker teal on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .order-confirmation {
+      width: 90%; /* Adjust the width for smaller screens */
+    }
+  
+    .burst {
+      width: 80px; /* Adjust burst size for smaller screens */
+      height: 80px; /* Adjust burst size for smaller screens */
+    }
+  }

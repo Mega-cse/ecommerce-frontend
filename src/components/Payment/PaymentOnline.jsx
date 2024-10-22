@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import CheckoutForm from './CheckoutForm'; // Import your CheckoutForm component
+import './PaymentOnline.css'; // Import the CSS file
 
 // Replace with your actual publishable key
 const stripePromise = loadStripe('pk_test_51PxSZpRs8NL4kngvFVsI96ZuKq3XURAw9ZDdvfRNlNXbiOjakBsOmD1GNFwKsMc7KCGIqRvn3Nm6wJYDwUGDTMwe00038l6IYH');
@@ -14,7 +15,7 @@ const PaymentOnline = () => {
 
   // Check if details are available
   if (!details || details.length === 0) {
-    return <div>Error: Payment details are missing.</div>;
+    return <div className="error-message">Error: Payment details are missing.</div>;
   }
 
   const totalAmount = details.reduce((total, item) => total + (item.price * item.quantity), 0);
@@ -23,23 +24,16 @@ const PaymentOnline = () => {
   const formData = { address, totalAmount };
 
   return (
-    <div style={{
-      width: '50%',
-      margin: '20px auto',
-      padding: '20px',
-      borderRadius: '10px',
-      border: '1px solid #ddd',
-      backgroundColor: '#f9f9f9'
-    }}>
-      <h1 style={{ textAlign: 'center' }}>Payment Details</h1>
-      <ul>
+    <div className="payment-online-container">
+      <h1>Payment Details</h1>
+      <ul className="payment-details-list">
         {details.map(item => (
           <li key={item.name}>
             {item.name} - ${item.price} x {item.quantity}
           </li>
         ))}
       </ul>
-      <p>Total Amount: ${totalAmount.toFixed(2)}</p>
+      <p className="total-amount">Total Amount: ${totalAmount.toFixed(2)}</p>
 
       <Elements stripe={stripePromise}>
         <CheckoutForm formData={formData} />

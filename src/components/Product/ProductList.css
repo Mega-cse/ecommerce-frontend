@@ -1,0 +1,81 @@
+.filter-section {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap onto the next line */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center;
+    padding: 20px; /* Reduced padding for smaller screens */
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.category-filter {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* Add some space to the right */
+}
+
+.category-filter ul {
+    list-style-type: none;
+    padding: 5px;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Reduced gap between items */
+}
+
+.category-filter li {
+    margin-right: 10px; /* Reduce the margin between items */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc; /* Border around each filter */
+    border-radius: 10px; /* Rounded corners */
+    padding: 5px; /* Reduce padding inside the box */
+    transition: background-color 0.3s; /* Smooth background transition */
+    width: 120px; /* Set a fixed width for each filter box */
+}
+
+.category-filter li:hover {
+    background-color: #dfb2b2; /* Change background on hover */
+}
+
+.category-filter img {
+    width: 40px; /* Set a smaller fixed width for images */
+    height: 40px; /* Set a smaller fixed height for images */
+    object-fit: cover; /* Ensure images fit within the box */
+    margin-bottom: 3px; /* Space between image and text */
+}
+
+.price-filter {
+    margin-left: 10%; /* Keep price filter separate */
+}
+
+.price-filter select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .filter-section {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    .category-filter {
+        margin-right: 10px; /* Reduce margin for smaller screens */
+    }
+
+    .category-filter li {
+        width: 100px; /* Adjust width for smaller screens */
+    }
+
+    .category-filter img {
+        width: 30px; /* Adjust image size for smaller screens */
+        height: 30px; /* Adjust image size for smaller screens */
+    }
+
+    .price-filter {
+        margin-left: 5%; /* Adjust margin for smaller screens */
+    }
+}

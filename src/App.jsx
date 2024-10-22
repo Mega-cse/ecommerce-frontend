@@ -9,16 +9,15 @@ import Cart from './components/Product/Cart';
 import ProductList from './components/Product/ProductList';
 import Payment from './components/Payment/Payment';
 import OrderConfirmation from './components/Payment/OrderConfirmation';
-import Register from './components/Register/Register';
-import ImageGallery from './components/ImageGallery/ImageGallery';
-import Footer from './components/Footer/Footer';
+import Register from './components/Register/Register';;
 import Profile from './components/Profile';
 import { AuthProvider, useAuth } from './components/AuthContext'; 
 import ForgotPassword from './components/Forgotpassword';
 import PaymentOnline from './components/Payment/PaymentOnline';
 import ProtectedRoute from './components/ProtectedRoute';
 import ResetPassword from './components/ResetPassword';
-import ReviewsSlider from './components/Testimonial/ReviewsSlider';
+import MyOrder from './components/Payment/MyOrder';
+
 
 export const CartContext = createContext();
 
@@ -84,10 +83,9 @@ function App() {
 
             {/* Redirect to home if user is logged in and tries to access login */}
             <Route path='/login' element={<ProtectedRoute><Navigate to='/' /></ProtectedRoute>} />
+            <Route path='/my-order' element={<MyOrder/>}/>
+         
           </Routes>
-          <ImageGallery />
-          <ReviewsSlider/>
-          <Footer />
          
         </CartContext.Provider>
       </AuthProvider>

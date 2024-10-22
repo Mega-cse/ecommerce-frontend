@@ -21,7 +21,7 @@ const MyOrder = () => {
       }
 
       try {
-        const response = await axios.get(`http://localhost:5001/api/orders/${userId}`, {
+        const response = await axios.get(`https://e-commerce-backend-6hq8.onrender.com/api/orders/${userId}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         

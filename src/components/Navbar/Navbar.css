@@ -5,6 +5,8 @@
   align-items: center;
   padding: 10px;
   color: black;
+  background-color: #fff; /* Set a background color */
+  border-bottom: 2px solid #ffa07a; /* Add a border at the bottom */
 }
 
 /* Mobile Menu Toggle */
@@ -20,8 +22,9 @@
 .user-button {
   background: none;
   border: none;
-  color: white;
+  color: #ffa07a; /* Change button text color */
   cursor: pointer;
+  font-weight: bold; /* Make the button text bold */
 }
 
 .dropdown-menu {
@@ -62,6 +65,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 10px;
+    border-bottom: none; /* Remove bottom border on mobile */
   }
 
   .nav-ul {
@@ -72,6 +76,8 @@
     display: flex; /* Show when toggled */
     flex-direction: column; /* Stack items vertically */
     width: 100%; /* Full width on mobile */
+    border-top: 2px solid #ffa07a; /* Add a top border for the dropdown */
+    padding: 10px 0; /* Add padding for the dropdown */
   }
 
   .dropdown-menu {

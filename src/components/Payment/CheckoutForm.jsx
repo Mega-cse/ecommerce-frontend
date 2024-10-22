@@ -12,24 +12,24 @@ const CheckoutForm = ({ formData }) => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (!stripe || !elements) return;
-  
+
     setLoading(true);
     setError(null);
-  
+
     const cardElement = elements.getElement(CardElement);
-  
+
     // Create a payment method
-    const { error: paymentError, paymentMethod } = await stripe.createPaymentMethod({
+    const { error: paymentError } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
     });
-  
+
     if (paymentError) {
       setError(paymentError.message);
       setLoading(false);
       return;
     }
-  
+
     // Mock response as if a successful payment was made
     try {
       // Here you would normally call your backend
@@ -37,13 +37,13 @@ const CheckoutForm = ({ formData }) => {
         ok: true,
         json: async () => ({ success: true }), // Simulate a successful response
       };
-  
+
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
-  
+
       const paymentData = await response.json();
-  
+
       if (paymentData.error) {
         setError(paymentData.error);
       } else {
@@ -56,12 +56,12 @@ const CheckoutForm = ({ formData }) => {
       setLoading(false);
     }
   };
-  
+
   return (
-    <form onSubmit={handleSubmit}>
-      <CardElement />
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-      <button type="submit" disabled={!stripe || loading}>
+    <form onSubmit={handleSubmit} className="checkout-form">
+      <CardElement className="card-element" />
+      {error && <div className="error-message">{error}</div>}
+      <button type="submit" className="pay-button" disabled={!stripe || loading}>
         {loading ? 'Processing...' : 'Pay'}
       </button>
     </form>
